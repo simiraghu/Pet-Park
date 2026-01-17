@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {AppProvider, AppConsumer} from './src/Provider/context/AppProvider';
+import React, { useEffect, useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { AppProvider, AppConsumer } from './src/Provider/context/AppProvider';
 import Stacknav from './src/Provider/Routenavigation';
-import {Provider} from 'react-redux';
-import {PersistGate} from 'redux-persist/integration/react';
-import {store, persistor} from './src/Redux/Store';
-import {LogBox, AppState} from 'react-native';
-import {serverTimestamp, updateDoc} from 'firebase/firestore';
-import {fireStoreDB} from './src/Config/firebaseConfig';
-import {useOnlineStatus} from './src/Hooks/useOnlineStatus';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './src/Redux/Store';
+import { LogBox, AppState } from 'react-native';
+import { serverTimestamp, updateDoc } from 'firebase/firestore';
+import { fireStoreDB } from './src/Config/firebaseConfig';
+import { useOnlineStatus } from './src/Hooks/useOnlineStatus';
 import NetworkProvider from './src/Provider/context/NetworkProvider';
 import CommunityPostScreen from './src/Screens/CommunityPostScreen';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs(); //Ignore all log notifications
@@ -30,11 +30,11 @@ export default function App() {
     prefixes: ['pomsse://'], //prefixes can be anything depend on what you have wrote in intent filter
 
     config: {
-      initialRouteName: 'FriendshipHome', //define initial page jis page pr redirect krna h
+      initialRouteName: 'FriendshipHome', //Define the initial page for redirection.
 
       screens: {
         JoinCommunity: {
-          path: 'view_community/:community_id', //define url path pagename/:id ka name option h ydi aap is page pr use kr rhe ho to hi likhna h
+          path: 'view_community/:community_id', //Define the URL path. The :id parameter is optional and should be used only if required on this page.
         },
         CommunityPostScreen: {
           path: 'get_post_details/:community_post_id',
@@ -52,7 +52,7 @@ export default function App() {
               <AppProvider {...this.props}>
                 <AppConsumer>
                   {funcs => {
-                    global.props = {...funcs};
+                    global.props = { ...funcs };
                     return <Stacknav {...funcs} />;
                   }}
                 </AppConsumer>
