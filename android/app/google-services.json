@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "872351385415",
+    "project_id": "petpark-9f376",
+    "storage_bucket": "petpark-9f376.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872351385415:android:1668014de4f57c9466ae62",
+        "android_client_info": {
+          "package_name": "com.petpark"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwsVZLy0nk3RxuLJCKTLYwX4afyJ3b4so"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
